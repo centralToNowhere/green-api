@@ -1,0 +1,79 @@
+.page {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  background: var(--surface);
+  padding: 36px 24px;
+}
+.panel {
+  width: 360px;
+  text-align: center;
+}
+.logo {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 44px;
+}
+.panel h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+.description {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+.form {
+  margin-top: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.field {
+  position: relative;
+  text-align: left;
+}
+.field label {
+  position: absolute;
+  top: -8px;
+  left: 16px;
+  padding: 0 6px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+}
+.field:focus-within label {
+  color: var(--accent);
+}
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+.submit {
+  width: 100%;
+  text-transform: uppercase;
+  min-height: 52px;
+  letter-spacing: 0.5px;
+}
+.error {
+  color: var(--error);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+@media (max-width: 639px) {
+  .page {
+    padding-top: 48px;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+  }
+  .form {
+    margin-top: 36px;
+  }
+}
