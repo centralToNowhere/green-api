@@ -44,8 +44,8 @@ export default defineConfig([
         { blankLine: 'always', prev: ['block', 'block-like'], next: '*' },
         { blankLine: 'always', prev: ['multiline-expression'], next: '*' },
       ],
-      "no-console": ["error", { allow: ["warn", "error"] }],
-      "no-debugger": "error",
+      'no-console': ['error', { allow: ['warn', 'error'] }],
+      'no-debugger': 'error',
     },
     languageOptions: {
       globals: globals.browser,
