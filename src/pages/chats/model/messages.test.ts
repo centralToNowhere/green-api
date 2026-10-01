@@ -5,7 +5,7 @@ import {
   notificationMessage,
   lastSeen,
   type Message,
-} from './messages';
+} from '@/pages/chats/model/messages';
 const message: Message = {
   id: '1',
   chatId: '100',

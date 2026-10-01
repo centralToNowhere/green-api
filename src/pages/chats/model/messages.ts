@@ -1,4 +1,4 @@
-import type { HistoryMessage, Notification } from '../../../shared/api';
+import type { HistoryMessage, Notification } from '@/shared/api';
 
 export interface Message {
   id: string;
@@ -6,7 +6,7 @@ export interface Message {
   timestamp: number;
   direction: 'incoming' | 'outgoing';
   text: string;
-  status?: string;
+  status?: string | undefined;
 }
 export interface Conversation {
   messages: Message[];

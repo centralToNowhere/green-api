@@ -1,7 +1,7 @@
 import { expect, it } from 'vitest';
 import { runInAction } from 'mobx';
 import { create } from 'mobx-persist';
-import { DraftStore } from './drafts';
+import { DraftStore } from '@/pages/chats/model/drafts';
 
 it('persists and restores drafts using only instance and chat', async () => {
   const storage = new Map<string, string>();

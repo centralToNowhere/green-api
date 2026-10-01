@@ -1,10 +1,10 @@
 import { useState, type FormEvent } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router';
-import { GreenApi } from '../../shared/api';
-import { useSession } from '../../shared/auth';
-import { Button, Input, TelegramLogo } from '../../shared/ui';
-import styles from './login.module.css';
+import { GreenApi } from '@/shared/api';
+import { useSession } from '@/shared/auth';
+import { Button, Input, TelegramLogo } from '@/shared/ui';
+import styles from '@/pages/login/login.module.css';
 
 export function LoginPage() {
   const [idInstance, setId] = useState('');

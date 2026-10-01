@@ -1,17 +1,17 @@
 import { Fragment, useEffect, useLayoutEffect, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router';
-import type { Chat, GreenApi } from '../../../shared/api';
-import { Avatar, Button, Icon } from '../../../shared/ui';
-import { contactQuery, historyQuery } from '../api/chat-queries';
+import type { Chat, GreenApi } from '@/shared/api';
+import { Avatar, Button, Icon } from '@/shared/ui';
+import { contactQuery, historyQuery } from '@/pages/chats/api/chat-queries';
 import {
   emptyConversation,
   formatDay,
   formatTime,
   lastSeen,
-} from '../model/messages';
-import { MessageEditor } from './MessageEditor';
-import styles from './chats.module.css';
+} from '@/pages/chats/model/messages';
+import { MessageEditor } from '@/pages/chats/ui/MessageEditor';
+import styles from '@/pages/chats/ui/chats.module.css';
 
 export function ChatThread({
   api,
@@ -20,7 +20,7 @@ export function ChatThread({
 }: {
   api: GreenApi;
   chatId: string;
-  chat?: Chat;
+  chat?: Chat | undefined;
 }) {
   const contact = useQuery({
     ...contactQuery(api, chatId),

@@ -12,8 +12,9 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "check-format": "prettier ./ --check",
+    "check-types": "tsc -p ./tsconfig.app.json",
     "format": "eslint ./ --fix && prettier ./ --write",
-    "precommit": "tsc && lint && test && check-format"
+    "precommit": "yarn check-types && yarn lint && yarn test && yarn check-format"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

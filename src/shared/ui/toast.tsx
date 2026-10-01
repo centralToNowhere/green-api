@@ -1,9 +1,9 @@
 import { Toast } from '@base-ui/react/toast';
 import type { ReactNode } from 'react';
-import { Icon } from './icons';
-import styles from './ui.module.css';
+import { Icon } from '@/shared/ui/icons';
+import styles from '@/shared/ui/ui.module.css';
 
-import { manager } from './toast-manager';
+import { manager } from '@/shared/ui/toast-manager';
 
 function ToastList() {
   const { toasts } = Toast.useToastManager();

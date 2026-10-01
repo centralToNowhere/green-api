@@ -1,10 +1,10 @@
 import { queryOptions, type QueryClient } from '@tanstack/react-query';
-import type { Chat, GreenApi } from '../../../shared/api';
+import type { Chat, GreenApi } from '@/shared/api';
 import {
   historyMessages,
   mergeConversation,
   type Conversation,
-} from '../model/messages';
+} from '@/pages/chats/model/messages';
 
 export const chatKey = (api: GreenApi) => ['chats', api.idInstance] as const;
 export const contactKey = (api: GreenApi, chatId: string) =>

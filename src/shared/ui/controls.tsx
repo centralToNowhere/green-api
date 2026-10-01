@@ -2,7 +2,7 @@ import { Button as BaseButton } from '@base-ui/react/button';
 import { Input as BaseInput } from '@base-ui/react/input';
 import { Avatar as BaseAvatar } from '@base-ui/react/avatar';
 import type { ComponentProps, CSSProperties } from 'react';
-import styles from './ui.module.css';
+import styles from '@/shared/ui/ui.module.css';
 
 export function Button({
   className = '',
@@ -24,7 +24,7 @@ export function Avatar({
   small = false,
 }: {
   name: string;
-  src?: string;
+  src?: string | undefined;
   small?: boolean;
 }) {
   const hue =

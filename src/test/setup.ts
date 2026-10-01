@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/vitest';
 import { afterAll, afterEach, beforeAll, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
-import { server } from './server';
+import { server } from '@/test/server';
 
 beforeAll(() => {
   vi.stubEnv('VITE_GREEN_API_URL', 'https://test.green-api.invalid');

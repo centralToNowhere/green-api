@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
-import { SessionContext } from './session-context';
-import { notifyError } from '../ui';
-import { GreenApi, type Credentials } from '../api';
+import { SessionContext } from '@/shared/auth/session-context';
+import { notifyError } from '@/shared/ui';
+import { GreenApi, type Credentials } from '@/shared/api';
 
 const storageKey = 'green-telegram-session';
 

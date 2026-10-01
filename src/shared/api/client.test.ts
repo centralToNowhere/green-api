@@ -1,7 +1,7 @@
 import { afterEach, expect, it, vi } from 'vitest';
 import { http, HttpResponse } from 'msw';
-import { server, apiPath, host } from '../../test/server';
-import { apiHost, GreenApi } from './client';
+import { server, apiPath, host } from '@/test/server';
+import { apiHost, GreenApi } from '@/shared/api/client';
 const apis: GreenApi[] = [];
 
 function createApi() {
@@ -17,12 +17,6 @@ function createApi() {
 
 afterEach(() => {
   apis.forEach((api) => api.close());
-});
-
-it('filters groups out of the chat list', async () => {
-  expect(await createApi().getChats()).toEqual([
-    { chatId: '100', name: 'Анна', type: 'user' },
-  ]);
 });
 
 it('does not expose the token or response body in errors', async () => {

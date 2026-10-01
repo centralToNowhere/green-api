@@ -4,11 +4,11 @@ import userEvent from '@testing-library/user-event';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { MemoryRouter } from 'react-router';
 import { http, HttpResponse } from 'msw';
-import { SessionProvider } from '../shared/auth';
-import { ToastProvider } from '../shared/ui';
-import { server, apiPath } from '../test/server';
-import { AppRoutes } from './App';
-import { createQueryClient } from './query-client';
+import { SessionProvider } from '@/shared/auth';
+import { ToastProvider } from '@/shared/ui';
+import { server, apiPath } from '@/test/server';
+import { AppRoutes } from '@/app/App';
+import { createQueryClient } from '@/app/query-client';
 const clients: ReturnType<typeof createQueryClient>[] = [];
 
 afterEach(async () => {

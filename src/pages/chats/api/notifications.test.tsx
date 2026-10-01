@@ -3,11 +3,14 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { http, HttpResponse } from 'msw';
 import type { ReactNode } from 'react';
-import { GreenApi, type Notification, type Chat } from '../../../shared/api';
-import { server, apiPath, host } from '../../../test/server';
-import { applyNotification, useNotifications } from './notifications';
-import { chatKey, historyKey } from './chat-queries';
-import type { Conversation } from '../model/messages';
+import { GreenApi, type Notification, type Chat } from '@/shared/api';
+import { server, apiPath, host } from '@/test/server';
+import {
+  applyNotification,
+  useNotifications,
+} from '@/pages/chats/api/notifications';
+import { chatKey, historyKey } from '@/pages/chats/api/chat-queries';
+import type { Conversation } from '@/pages/chats/model/messages';
 
 const api = new GreenApi(
   { idInstance: '123', apiTokenInstance: 'token' },
@@ -84,6 +87,7 @@ it('retries receipt confirmation without duplicating processed messages', async 
 
   await waitFor(() => expect(result.current.isError).toBe(true));
   await result.current.refetch();
+
   expect(attempts).toBe(2);
   expect(
     cache.getQueryData<Conversation>(historyKey(api, '200'))?.messages,

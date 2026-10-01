@@ -5,10 +5,10 @@ import {
   useQueryClient,
   type QueryClient,
 } from '@tanstack/react-query';
-import type { GreenApi, Notification } from '../../../shared/api';
-import { notifyError } from '../../../shared/ui';
-import { notificationMessage } from '../model/messages';
-import { addChat, updateConversation } from './chat-queries';
+import type { GreenApi, Notification } from '@/shared/api';
+import { notifyError } from '@/shared/ui';
+import { notificationMessage } from '@/pages/chats/model/messages';
+import { addChat, updateConversation } from '@/pages/chats/api/chat-queries';
 
 export function applyNotification(
   client: QueryClient,
@@ -97,7 +97,13 @@ export function useNotifications(api: GreenApi) {
 
       return Date.now();
     },
-    refetchInterval: 1,
+    refetchInterval: (query) => {
+      if (query.state.status === 'error') {
+        return 5000;
+      }
+
+      return 100;
+    },
     refetchIntervalInBackground: true,
     refetchOnMount: 'always',
     refetchOnWindowFocus: false,

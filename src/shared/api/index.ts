@@ -1,8 +1,8 @@
-export { GreenApi, ApiError, apiHost } from './client';
+export { GreenApi, ApiError, apiHost } from '@/shared/api/client';
 export type {
   Credentials,
   Chat,
   Contact,
   HistoryMessage,
   Notification,
-} from './client';
+} from '@/shared/api/client';

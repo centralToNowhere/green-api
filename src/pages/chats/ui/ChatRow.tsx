@@ -1,12 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import { NavLink } from 'react-router';
 import { observer } from 'mobx-react-lite';
-import type { Chat, GreenApi } from '../../../shared/api';
-import { Avatar } from '../../../shared/ui';
-import { contactQuery, historyQuery } from '../api/chat-queries';
-import { drafts } from '../model/drafts';
-import { formatTime, lastSeen } from '../model/messages';
-import styles from './chats.module.css';
+import type { Chat, GreenApi } from '@/shared/api';
+import { Avatar } from '@/shared/ui';
+import { contactQuery, historyQuery } from '@/pages/chats/api/chat-queries';
+import { drafts } from '@/pages/chats/model/drafts';
+import { formatTime, lastSeen } from '@/pages/chats/model/messages';
+import styles from '@/pages/chats/ui/chats.module.css';
 
 export const ChatRow = observer(function ChatRow({
   api,

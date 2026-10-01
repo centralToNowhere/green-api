@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import type { GreenApi, Credentials } from '../api';
+import type { GreenApi, Credentials } from '@/shared/api';
 export const SessionContext = createContext<{
   api: GreenApi | null;
   login: (credentials: Credentials, api: GreenApi) => void;

@@ -1,6 +1,6 @@
 import { MutationCache, QueryCache, QueryClient } from '@tanstack/react-query';
-import { ApiError } from '../shared/api';
-import { notifyError } from '../shared/ui';
+import { ApiError } from '@/shared/api';
+import { notifyError } from '@/shared/ui';
 
 export function createQueryClient() {
   return new QueryClient({

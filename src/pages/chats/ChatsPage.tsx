@@ -8,20 +8,20 @@ import {
 import { Menu } from '@base-ui/react/menu';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router';
-import type { GreenApi } from '../../shared/api';
-import { useSession } from '../../shared/auth';
-import { Button, Icon, Input } from '../../shared/ui';
+import type { GreenApi } from '@/shared/api';
+import { useSession } from '@/shared/auth';
+import { Button, Icon, Input } from '@/shared/ui';
 import {
   addChat,
   chatsQuery,
   historyKey,
-} from './api/chat-queries';
-import { useNotifications } from './api/notifications';
-import { hydrateDrafts } from './model/drafts';
-import type { Conversation } from './model/messages';
-import { ChatRow } from './ui/ChatRow';
-import { ChatThread } from './ui/ChatThread';
-import styles from './ui/chats.module.css';
+} from '@/pages/chats/api/chat-queries';
+import { useNotifications } from '@/pages/chats/api/notifications';
+import { hydrateDrafts } from '@/pages/chats/model/drafts';
+import type { Conversation } from '@/pages/chats/model/messages';
+import { ChatRow } from '@/pages/chats/ui/ChatRow';
+import { ChatThread } from '@/pages/chats/ui/ChatThread';
+import styles from '@/pages/chats/ui/chats.module.css';
 
 export function ChatsPage({ api }: { api: GreenApi }) {
   const { chatId } = useParams();

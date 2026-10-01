@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { create, persist } from 'mobx-persist';
-import { notifyError } from '../../../shared/ui';
+import { notifyError } from '@/shared/ui';
 
 export class DraftStore {
   drafts: Record<string, string> = {};

@@ -165,7 +165,7 @@ export class GreenApi {
   private historyLane = new RequestLane(1100);
   private contactLane = new RequestLane(200);
   private chatsLane = new RequestLane(1100);
-  private activeChat?: string;
+  private activeChat: string | undefined;
 
   constructor(credentials: Credentials, host = apiHost()) {
     this.credentials = credentials;
@@ -188,7 +188,11 @@ export class GreenApi {
   private async request<T>(
     method: string,
     body?: unknown,
-    options: { signal?: AbortSignal; verb?: string; suffix?: string } = {},
+    options: {
+      signal?: AbortSignal | undefined;
+      verb?: string;
+      suffix?: string;
+    } = {},
   ): Promise<T> {
     const { idInstance, apiTokenInstance } = this.credentials;
 
@@ -204,11 +208,12 @@ export class GreenApi {
     try {
       response = await fetch(url, {
         method: options.verb ?? (body === undefined ? 'GET' : 'POST'),
-        headers:
-          body === undefined
-            ? undefined
-            : { 'Content-Type': 'application/json' },
-        body: body === undefined ? undefined : JSON.stringify(body),
+        ...(body === undefined
+          ? {}
+          : {
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(body),
+            }),
         signal,
       });
     } catch {

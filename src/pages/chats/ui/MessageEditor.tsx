@@ -5,13 +5,13 @@ import {
   useMutation,
   useQueryClient,
 } from '@tanstack/react-query';
-import type { GreenApi } from '../../../shared/api';
-import { Button, Icon } from '../../../shared/ui';
-import { drafts, hydrateDrafts } from '../model/drafts';
-import { updateConversation } from '../api/chat-queries';
-import styles from './chats.module.css';
+import type { GreenApi } from '@/shared/api';
+import { Button, Icon } from '@/shared/ui';
+import { drafts, hydrateDrafts } from '@/pages/chats/model/drafts';
+import { updateConversation } from '@/pages/chats/api/chat-queries';
+import styles from '@/pages/chats/ui/chats.module.css';
 
-export const MessageEditor = observer(function messageEditor({
+export const MessageEditor = observer(function MessageEditor({
   api,
   chatId,
   onSent,

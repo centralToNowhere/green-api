@@ -1,14 +1,14 @@
 import { lazy, Suspense, useState } from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
-import { SessionProvider, useSession } from '../shared/auth';
-import { ToastProvider } from '../shared/ui';
-import { LoginPage } from '../pages/login';
+import { SessionProvider, useSession } from '@/shared/auth';
+import { ToastProvider } from '@/shared/ui';
+import { LoginPage } from '@/pages/login';
 const ChatsPage = lazy(() =>
-  import('../pages/chats').then((module) => ({ default: module.ChatsPage })),
+  import('@/pages/chats').then((module) => ({ default: module.ChatsPage })),
 );
 
-import { createQueryClient } from './query-client';
+import { createQueryClient } from '@/app/query-client';
 
 export function AppRoutes() {
   const { api } = useSession();
